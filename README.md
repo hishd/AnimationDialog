@@ -23,11 +23,29 @@ allprojects {
 }
 ```
 
+##### Maven
+```
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+add to dependency,
+```
+<dependency>
+	    <groupId>com.github.hishd</groupId>
+	    <artifactId>AnimationDialog</artifactId>
+	    <version>Tag</version>
+	</dependency>
+```
+
 ##### Gradle
 ```
 dependencies {
-    implementation 'com.github.hishd:AnimDialog:1.0'
-}
+	        implementation 'com.github.hishd:AnimationDialog:Tag'
+	}
 ```
 
 ## Usage
