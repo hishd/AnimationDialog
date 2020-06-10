@@ -25,7 +25,7 @@ add to dependency,
 <dependency>
 	    <groupId>com.github.hishd</groupId>
 	    <artifactId>AnimationDialog</artifactId>
-	    <version>Tag</version>
+	    <version>v1.0</version>
 	</dependency>
 ```
 
