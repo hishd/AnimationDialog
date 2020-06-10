@@ -5,9 +5,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -19,9 +22,56 @@ public class AnimDialog extends Dialog {
     TextView txtTitle;
     TextView txtContent;
     Button btn1, btn2;
+    RelativeLayout rootLayout;
+    Context context;
 
     public AnimDialog(Context context) {
         super(context);
+        this.context = context;
+    }
+
+    public AnimDialog setBackgroundColor(int color) {
+        Drawable background = rootLayout.getBackground();
+        if (background instanceof ShapeDrawable) {
+            ((ShapeDrawable) background).getPaint().setColor(context.getColor(color));
+        } else if (background instanceof GradientDrawable) {
+            ((GradientDrawable) background).setColor(context.getColor(color));
+        } else if (background instanceof ColorDrawable) {
+            ((ColorDrawable) background).setColor(context.getColor(color));
+        }
+        return this;
+    }
+
+    public AnimDialog setButton1BackgroundColor(int color) {
+
+        if (btn1 == null)
+            return this;
+
+        Drawable btn1Background = btn1.getBackground();
+        if (btn1Background instanceof ShapeDrawable) {
+            ((ShapeDrawable) btn1Background).getPaint().setColor(context.getColor(color));
+        } else if (btn1Background instanceof GradientDrawable) {
+            ((GradientDrawable) btn1Background).setColor(context.getColor(color));
+        } else if (btn1Background instanceof ColorDrawable) {
+            ((ColorDrawable) btn1Background).setColor(context.getColor(color));
+        }
+        return this;
+    }
+
+    public AnimDialog setButton2BackgroundColor(int color) {
+
+        if (btn2 == null)
+            return this;
+
+        Drawable btn2Background = btn2.getBackground();
+        if (btn2Background instanceof ShapeDrawable) {
+            ((ShapeDrawable) btn2Background).getPaint().setColor(context.getColor(color));
+        } else if (btn2Background instanceof GradientDrawable) {
+            ((GradientDrawable) btn2Background).setColor(context.getColor(color));
+        } else if (btn2Background instanceof ColorDrawable) {
+            ((ColorDrawable) btn2Background).setColor(context.getColor(color));
+        }
+        return this;
     }
 
     public AnimDialog setImage(Drawable drawable) {
@@ -43,15 +93,28 @@ public class AnimDialog extends Dialog {
         return this;
     }
 
+    public AnimDialog setTitleColor(int color) {
+        if (txtTitle != null)
+            txtTitle.setTextColor(context.getColor(color));
+        return this;
+    }
+
     public AnimDialog setContent(String content) {
         if (txtContent != null)
             txtContent.setText(content);
         return this;
     }
 
-    public AnimDialog setButton1(String buttonText, int textColor, final AnimOnClickListener animOnClickListener) {
+    public AnimDialog setContentColor(int color) {
+        if (txtContent != null)
+            txtContent.setTextColor(context.getColor(color));
+        return this;
+    }
+
+    public AnimDialog setButton1(String buttonText, int textColor, boolean allCaps, final AnimOnClickListener animOnClickListener) {
         if (btn1 != null) {
             btn1.setText(buttonText);
+            btn1.setAllCaps(allCaps);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -65,9 +128,10 @@ public class AnimDialog extends Dialog {
         return this;
     }
 
-    public AnimDialog setButton2(String buttonText, int textColor, final AnimOnClickListener animOnClickListener) {
+    public AnimDialog setButton2(String buttonText, int textColor, boolean allCaps, final AnimOnClickListener animOnClickListener) {
         if (btn2 != null) {
             btn2.setText(buttonText);
+            btn2.setAllCaps(allCaps);
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -83,8 +147,10 @@ public class AnimDialog extends Dialog {
 
     public AnimDialog createAnimatedSingleDialog() {
         setContentView(R.layout.layout_animated_single);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         lotteView = findViewById(R.id.lotteView);
-        lotteView.setAnimation("");
+        lotteView.setAnimation("information.json");
+        rootLayout = findViewById(R.id.rootLayout);
         txtTitle = findViewById(R.id.txtTitle);
         txtContent = findViewById(R.id.txtContent);
         btn1 = findViewById(R.id.btn1);
@@ -95,6 +161,7 @@ public class AnimDialog extends Dialog {
         setContentView(R.layout.layout_animated_dual);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         lotteView = findViewById(R.id.lotteView);
+        rootLayout = findViewById(R.id.rootLayout);
         txtTitle = findViewById(R.id.txtTitle);
         txtContent = findViewById(R.id.txtContent);
         btn1 = findViewById(R.id.btn1);
@@ -104,6 +171,8 @@ public class AnimDialog extends Dialog {
 
     public AnimDialog createNonAnimatedSingleDialog() {
         setContentView(R.layout.layout_non_animated_single);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        rootLayout = findViewById(R.id.rootLayout);
         img = findViewById(R.id.img);
         txtTitle = findViewById(R.id.txtTitle);
         txtContent = findViewById(R.id.txtContent);
@@ -113,6 +182,8 @@ public class AnimDialog extends Dialog {
 
     public AnimDialog createNonAnimatedDualDialog() {
         setContentView(R.layout.layout_non_animated_dual);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        rootLayout = findViewById(R.id.rootLayout);
         img = findViewById(R.id.img);
         txtTitle = findViewById(R.id.txtTitle);
         txtContent = findViewById(R.id.txtContent);
@@ -122,7 +193,7 @@ public class AnimDialog extends Dialog {
     }
 
 
-    public interface AnimOnClickListener{
+    public interface AnimOnClickListener {
         void onClicked(Dialog dialog);
     }
 }

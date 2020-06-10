@@ -33,9 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 new AnimDialog(MainActivity.this)
                         .createAnimatedSingleDialog()
                         .setAnimation("loading.json")
+                        .setBackgroundColor(R.color.color1)
+                        .setButton1BackgroundColor(R.color.button1)
                         .setTitle("Loading Mail")
+                        .setTitleColor(R.color.color_title)
+                        .setContentColor(R.color.color_text)
                         .setContent("Example content to illustrate a loading animation")
-                        .setButton1("OK", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton1("OK", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked OK", Toast.LENGTH_SHORT).show();
@@ -50,16 +54,21 @@ public class MainActivity extends AppCompatActivity {
                 new AnimDialog(MainActivity.this)
                         .createAnimatedDualDialog()
                         .setAnimation("location.json")
+                        .setBackgroundColor(R.color.color3)
+                        .setButton1BackgroundColor(R.color.button1)
+                        .setButton2BackgroundColor(R.color.button2)
+                        .setTitleColor(R.color.color_title)
+                        .setContentColor(R.color.color_text)
                         .setTitle("Loading Location")
                         .setContent("Example content to illustrate a Location animation")
-                        .setButton1("OK", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton1("OK", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked OK", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         })
-                        .setButton2("Cancel", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton2("Cancel", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked Cancel", Toast.LENGTH_SHORT).show();
@@ -74,9 +83,13 @@ public class MainActivity extends AppCompatActivity {
                 new AnimDialog(MainActivity.this)
                         .createNonAnimatedSingleDialog()
                         .setImage(getDrawable(R.drawable.profile_blank))
+                        .setButton1BackgroundColor(R.color.button3)
+                        .setBackgroundColor(R.color.color3)
+                        .setTitleColor(R.color.color_title)
+                        .setContentColor(R.color.color_text)
                         .setTitle("Loading Contacts")
                         .setContent("Example content to illustrate a sample non anim dialog.")
-                        .setButton1("OK", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton1("OK", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked OK", Toast.LENGTH_SHORT).show();
@@ -91,16 +104,21 @@ public class MainActivity extends AppCompatActivity {
                 new AnimDialog(MainActivity.this)
                         .createNonAnimatedDualDialog()
                         .setImage(getDrawable(R.drawable.dummy_image))
+                        .setButton1BackgroundColor(R.color.button1)
+                        .setButton2BackgroundColor(R.color.button4)
+                        .setBackgroundColor(R.color.color1)
+                        .setTitleColor(R.color.color_title)
+                        .setContentColor(R.color.color_text)
                         .setTitle("Loading Images")
                         .setContent("Example content to illustrate a sample non anim dialog.")
-                        .setButton1("OK", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton1("OK", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked OK", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         })
-                        .setButton2("Cancel", 0, new AnimDialog.AnimOnClickListener() {
+                        .setButton2("Cancel", 0, false, new AnimDialog.AnimOnClickListener() {
                             @Override
                             public void onClicked(Dialog dialog) {
                                 Toast.makeText(getApplicationContext(), "Clicked Cancel", Toast.LENGTH_SHORT).show();
