@@ -44,7 +44,7 @@ allprojects {
 add dependency,
 ```
 dependencies {
-	        implementation 'com.github.hishd:AnimationDialog:Tag'
+	        implementation 'com.github.hishd:AnimationDialog:v1.0'
 	}
 ```
 
