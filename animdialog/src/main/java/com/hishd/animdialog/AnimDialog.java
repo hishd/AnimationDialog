@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,6 +72,11 @@ public class AnimDialog extends Dialog {
         } else if (btn2Background instanceof ColorDrawable) {
             ((ColorDrawable) btn2Background).setColor(context.getColor(color));
         }
+        return this;
+    }
+
+    public AnimDialog setTextGravity(int gravity) {
+        txtContent.setGravity(gravity);
         return this;
     }
 
