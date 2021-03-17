@@ -11,6 +11,25 @@ Animdialog for android, a Lottie powered simple delightful popup dialog with bot
 
 The easiest way to use Animdialog is to add the android library to your projects dependencies.
 
+##### Maven
+```
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+add to dependency,
+```
+<dependency>
+	    <groupId>com.github.hishd</groupId>
+	    <artifactId>AnimationDialog</artifactId>
+	    <version>v1.0</version>
+	</dependency>
+```
+
+##### Gradle
 Add the repository to your project build.gradle
 
 ```
@@ -22,12 +41,11 @@ allprojects {
     }
 }
 ```
-
-##### Gradle
+add dependency,
 ```
 dependencies {
-    implementation 'com.github.hishd:AnimDialog:1.0'
-}
+	        implementation 'com.github.hishd:AnimationDialog:v1.0'
+	}
 ```
 
 ## Usage
