@@ -26,6 +26,10 @@ public class AnimDialog extends Dialog {
     RelativeLayout rootLayout;
     Context context;
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public AnimDialog(Context context) {
         super(context);
         this.context = context;
