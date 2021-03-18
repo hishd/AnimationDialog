@@ -29,6 +29,7 @@ public class AnimDialog extends Dialog {
     public AnimDialog(Context context) {
         super(context);
         this.context = context;
+        this.setCanceledOnTouchOutside(false);
     }
 
     public AnimDialog setBackgroundColor(int color) {

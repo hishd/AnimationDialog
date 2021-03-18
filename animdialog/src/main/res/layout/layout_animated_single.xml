@@ -39,7 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtTitle"
         android:layout_marginTop="@dimen/_10sdp"
-        android:maxLines="10"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:text="This is the content of the dialog" />
