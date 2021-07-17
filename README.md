@@ -25,7 +25,7 @@ add to dependency,
 <dependency>
 	    <groupId>com.github.hishd</groupId>
 	    <artifactId>AnimationDialog</artifactId>
-	    <version>1.5</version>
+	    <version>1.6</version>
 	</dependency>
 ```
 
@@ -44,7 +44,7 @@ allprojects {
 add dependency,
 ```
 dependencies {
-	        implementation 'com.github.hishd:AnimationDialog:1.5'
+	        implementation 'com.github.hishd:AnimationDialog:1.6'
 	}
 ```
 
