@@ -134,7 +134,7 @@ public class AnimDialog extends Dialog {
             });
 
             if (textColor != 0)
-                btn1.setTextColor(textColor);
+                btn1.setTextColor(context.getColor(textColor));
         }
         return this;
     }
@@ -151,7 +151,7 @@ public class AnimDialog extends Dialog {
             });
 
             if (textColor != 0)
-                btn2.setTextColor(textColor);
+                btn2.setTextColor(context.getColor(textColor));
         }
         return this;
     }
