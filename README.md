@@ -1,4 +1,5 @@
 # Anim Dialog
+[![](https://jitpack.io/v/hishd/AnimationDialog.svg)](https://jitpack.io/#hishd/AnimationDialog)
 
 Animdialog for android, a Lottie powered simple delightful popup dialog with both animated and non animated type.
 
